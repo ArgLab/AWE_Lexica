@@ -758,7 +758,7 @@ def loadViewpointLexicon(viewpointLex='argVoc.csv'):
     #                      viewpointLex) as filepath:
         
     with resources.as_file(
-            resources.files('awe_lexica.data').joinpath(viewpointLex)
+            resources.files('awe_lexica').joinpath('data').joinpath(viewpointLex)
         ) as filepath:
 
         with open(filepath, mode='r') as csv_file:
@@ -834,7 +834,7 @@ def to_disk():
         # with resources.path('awe_lexica.json_data',
         #                     filename) as outputfile:
         with resources.as_file(
-            resources.files('awe_lexica.json_data').joinpath(filename)
+            resources.files('awe_lexica').joinpath('json_data').joinpath(filename)
         ) as outputfile:
             print('writing output file to', outputfile)
             srsly.write_json(outputfile, eval(export))
@@ -914,7 +914,7 @@ def processConcretes():
     # with resources.path('awe_lexica.data',
     #                     'Concr_Base.csv') as filepath:
     with resources.as_file(
-            resources.files('awe_lexica.data').joinpath('Concr_Base.csv')
+            resources.files('awe_lexica').joinpath('data').joinpath('Concr_Base.csv')
         ) as filepath:
         with open(filepath, mode='r', encoding='ISO-8859-1') as csv_file:
             csv_reader = csv.DictReader(csv_file)
@@ -1374,7 +1374,7 @@ def processConcretes():
         # with resources.path('awe_lexica.json_data',
         #                     'concretes.json') as outputfile:
         with resources.as_file(
-            resources.files('awe_lexica.json_data').joinpath('concretes.json')
+            resources.files('awe_lexica').joinpath('json_data').joinpath('concretes.json')
         ) as outputfile:
             srsly.write_json(outputfile, finalDict)
 
